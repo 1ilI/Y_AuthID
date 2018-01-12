@@ -103,23 +103,29 @@ __AuthIDCheckResult__;\
                             msg = [authType stringByAppendingString:@"被锁定(多次验证失败,系统需要用户手动输入密码)"];
                             Result_Get_Main_Queue(resutl(Y_AuthIDTypeAuthIDLockout, error, msg));
                             if (needUnlock) {
-                                [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                if (@available(iOS 9.0, *)) {
+                                    [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                }
                             }
                         }
                             break;
-                        case LAErrorAppCancel: {
+                        case kLAErrorAppCancel: {
                             msg = @"当前软件被挂起并取消了授权 (如App进入了后台等)";
                             Result_Get_Main_Queue(resutl(Y_AuthIDTypeAppCancel, error, msg));
                             if (needUnlock) {
-                                [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                if (@available(iOS 9.0, *)) {
+                                    [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                }
                             }
                         }
                             break;
-                        case LAErrorInvalidContext: {
+                        case kLAErrorInvalidContext: {
                             msg = @"当前软件被挂起并取消了授权 (LAContext对象无效)";
                             Result_Get_Main_Queue(resutl(Y_AuthIDTypeInvalidContext, error, msg));
                             if (needUnlock) {
-                                [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                if (@available(iOS 9.0, *)) {
+                                    [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                                }
                             }
                         }
                             break;
@@ -129,7 +135,9 @@ __AuthIDCheckResult__;\
                         msg = [authType stringByAppendingString:@"验证 失败"];
                         Result_Get_Main_Queue(resutl(Y_AuthIDTypeFail, error, msg));
                         if (needUnlock) {
-                            [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                            if (@available(iOS 9.0, *)) {
+                                [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:localizedReason2 reply:^(BOOL success, NSError * _Nullable error) {}];
+                            }
                         }
                     }
                         break;
