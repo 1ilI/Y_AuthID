@@ -1,0 +1,6 @@
+framework module Y_AuthID {
+  umbrella header "Y_AuthID-umbrella.h"
+
+  export *
+  module * { export * }
+}

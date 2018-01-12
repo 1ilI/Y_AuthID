@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Y_AuthID'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Y_AuthID.'
+  s.summary          = 'TouchID/FaceID ===> Y_AuthID.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,13 +19,14 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
+TouchID/FaceID ===> Y_AuthID.
                        DESC
 
-  s.homepage         = 'https://github.com/zhangyue369581379@qq.com/Y_AuthID'
+  s.homepage         = 'https://github.com/zhang-github/Y_AuthID'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'zhangyue369581379@qq.com' => 'zhang-github' }
-  s.source           = { :git => 'https://github.com/zhangyue369581379@qq.com/Y_AuthID.git', :tag => s.version.to_s }
+  s.author           = { 'zhang-github' => 'zhang-github' }
+  s.source           = { :git => 'https://github.com/zhang-github/Y_AuthID.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
