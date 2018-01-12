@@ -22,7 +22,7 @@ pod 'Y_AuthID'
 
 ## Author
 
-zhangyue369581379@qq.com, zhang-github
+zhang-github
 
 ## License
 
