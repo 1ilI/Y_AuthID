@@ -63,6 +63,14 @@ typedef void(^AuthIDCheckResult)(Y_AuthIDType authIDType, NSError *error, NSStri
 
 @interface Y_AuthID : NSObject
 
+
+/**
+ 判断设备是否支持身份验证
+
+ @return YES：支持、 NO：不支持
+ */
++ (BOOL)deviceCanSupport;
+
 /**
  启动AuthID进行身份验证
 

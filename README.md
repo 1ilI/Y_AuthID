@@ -13,12 +13,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-Y_AuthID is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### [CocoaPods](http://cocoapods.org)
 
-```ruby
-pod 'Y_AuthID'
-```
+1. Add `pod 'Y_AuthID'` to your Podfile.
+2. Run `pod install` or `pod update`.
+3. Import \<Y_AuthID/Y_AuthID.h\>.
+
+### Manually
+
+1. Download all the files in the Y_AuthID subdirectory.
+2. Add the source files to your Xcode project.
+3. Import `Y_AuthID.h`.
 
 ## Author
 

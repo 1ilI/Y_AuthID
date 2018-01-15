@@ -20,6 +20,14 @@ __AuthIDCheckResult__;\
 
 @implementation Y_AuthID
 
++ (BOOL)deviceCanSupport {
+    LAContext* context = [[LAContext alloc] init];
+    NSError *error = nil;
+    //实测中发现如果使用LAPolicyDeviceOwnerAuthentication,则每次返回的结果都是true,使用LAPolicyDeviceOwnerAuthenticationWithBiometrics则可以返回真实的结果
+    BOOL isSupport = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
+    return isSupport;
+}
+
 + (void)showAuthIDHasInputPassword:(BOOL)hasInput needUnlock:(BOOL)needUnlock result:(AuthIDCheckResult )resutl {
     if (NSFoundationVersionNumber < NSFoundationVersionNumber_iOS_8_0) {
         dispatch_async(dispatch_get_main_queue(), ^{
