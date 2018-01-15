@@ -154,7 +154,18 @@ __AuthIDCheckResult__;\
         }];
     }
     else {
-        Result_Get_Main_Queue(resutl(Y_AuthIDTypeNotSupport,nil,@"暂不支持验证（也有可能是多次验证失败导致）"));
+        if (error.code == kLAErrorTouchIDLockout) {
+            NSString *msg = @"验证被锁定(多次验证失败,系统需要用户手动输入密码)";
+            Result_Get_Main_Queue(resutl(Y_AuthIDTypeAuthIDLockout, error, msg));
+            if (needUnlock) {
+                if (@available(iOS 9.0, *)) {
+                    [context evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:@"验证失败,系统需要您手动输入密码" reply:^(BOOL success, NSError * _Nullable error) {}];
+                }
+            }
+        }
+        else {
+            Result_Get_Main_Queue(resutl(Y_AuthIDTypeNotSupport,nil,@"暂不支持验证（也有可能是多次验证失败导致）"));
+        }
     }
 }
 

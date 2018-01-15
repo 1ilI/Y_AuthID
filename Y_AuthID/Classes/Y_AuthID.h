@@ -74,7 +74,7 @@ typedef void(^AuthIDCheckResult)(Y_AuthIDType authIDType, NSError *error, NSStri
 /**
  启动AuthID进行身份验证
 
- @param hasInput 默认为NO，当为YES时，验证失败时显示 取消|输入密码
+ @param hasInput 默认为NO，验证失败时显示 取消; 当为YES时，验证失败时显示 取消|输入密码
  @param needUnlock 默认为NO，当为YES时，若失败次数过多，生物验证锁定时，弹出输入系统密码以解锁
  @param resutl 指纹解锁 校验回调
  */
