@@ -72,6 +72,13 @@ typedef void(^AuthIDCheckResult)(Y_AuthIDType authIDType, NSError *error, NSStri
 + (BOOL)deviceCanSupport;
 
 /**
+ 判断该设备是否支持FaceID
+
+ @return YES：支持、 NO：不支持
+ */
++ (BOOL)canSupportFaceID;
+
+/**
  启动AuthID进行身份验证
 
  @param hasInput 默认为NO，验证失败时显示 取消; 当为YES时，验证失败时显示 取消|输入密码

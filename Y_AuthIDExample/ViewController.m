@@ -24,10 +24,20 @@
     self.navigationItem.title = @"Y_AuthID 身份校验";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.dataArr = @[@"解锁失败，无右侧输入密码，无密码验证界面",
+    
+    NSString *title = [NSString string];
+    if (![Y_AuthID deviceCanSupport]) {
+        title = @"该设备不支持生物验证";
+    }
+    if ([Y_AuthID canSupportFaceID]) {
+        title = @"该设备支持 Face ID 验证";
+    }
+    self.dataArr = @[
+                     @"解锁失败，无右侧输入密码，无密码验证界面",
                      @"解锁失败，有右侧输入密码，无密码验证界面",
                      @"解锁失败，无右侧输入密码，有密码验证界面",
-                     @"解锁失败，有右侧输入密码，有密码验证界面"];
+                     @"解锁失败，有右侧输入密码，有密码验证界面",
+                     title];
 }
 
 - (void)viewWillLayoutSubviews {
