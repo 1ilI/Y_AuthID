@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.summary      = "快速调用系统 TouchID/FaceID 进行身份验证"
   #详介
   s.description  = <<-DESC
-  快速调用系统 TouchID/FaceID 进行身份验证
+  一个方法快速调用系统 TouchID/FaceID 进行身份验证
                    DESC
 
   #首页
