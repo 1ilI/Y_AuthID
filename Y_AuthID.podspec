@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   #名称
   s.name         = "Y_AuthID"
   #版本
-  s.version      = "0.1.3"
+  s.version      = "0.1.4"
   #简介
   s.summary      = "快速调用系统 TouchID/FaceID 进行身份验证"
   #详介
